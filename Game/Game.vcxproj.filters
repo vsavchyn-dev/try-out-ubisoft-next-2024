@@ -21,6 +21,11 @@
     <ClCompile Include="external\stb_image\stb_image.cpp">
       <Filter>stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="src\Math\Matrix\Matrix.cpp" />
+    <ClCompile Include="src\Math\Vector3\Vector3.cpp" />
+    <ClCompile Include="src\Graphics\Mesh\Mesh.cpp" />
+    <ClCompile Include="src\Graphics\Triangle\Triangle.cpp" />
+    <ClCompile Include="src\Scene\Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\stdafx.h" />
@@ -48,6 +53,11 @@
     <ClInclude Include="external\stb_image\stb_image.h">
       <Filter>stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\Math\Matrix\Matrix.h" />
+    <ClInclude Include="src\Math\Vector3\Vector3.h" />
+    <ClInclude Include="src\Graphics\Mesh\Mesh.h" />
+    <ClInclude Include="src\Graphics\Triangle\Triangle.h" />
+    <ClInclude Include="src\Scene\Scene.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="NextAPI">

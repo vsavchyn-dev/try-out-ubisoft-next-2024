@@ -7,12 +7,10 @@
 
 #include "targetver.h"
 
-// #include <stdio.h>
+#include <cassert>
 #include <iostream>
-#include <tchar.h>
 #include <math.h>
+#include <stdexcept>
 #include <string>
 
 #include "App\app.h"
-
-// TODO: reference additional headers your program requires here
