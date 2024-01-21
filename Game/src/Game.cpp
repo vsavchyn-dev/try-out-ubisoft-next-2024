@@ -8,7 +8,9 @@
 
 #include "Scene/Scene.h"
 
-Scene* scene = new Scene();
+//Scene* scene = new Scene();
+
+Scene scene;
 
 enum
 {
@@ -24,7 +26,7 @@ enum
 //------------------------------------------------------------------------
 void Init()
 {
-	scene->Init({0.0f, 0.0f, 800.0f, 600.0f});
+	scene.Init({0.0f, 0.0f, 800.0f, 600.0f});
 }
 
 //------------------------------------------------------------------------
@@ -33,7 +35,7 @@ void Init()
 //------------------------------------------------------------------------
 void Update(float deltaTime)
 {
-	scene->Update(deltaTime);
+	scene.Update(deltaTime);
 
 	if (App::GetController().CheckButton(XINPUT_GAMEPAD_B, true))
 	{
@@ -49,7 +51,7 @@ void Render()
 {	
 	App::Print(100, 100, "Sample Text");
 
-	scene->Render();
+	scene.Render();
 
 	//------------------------------------------------------------------------
 	// Example Line Drawing.
@@ -78,5 +80,5 @@ void Render()
 //------------------------------------------------------------------------
 void Shutdown()
 {	
-	delete scene;
+	//delete scene;
 }

@@ -13,11 +13,10 @@ Even though I was not able to finish it on time, this work will serve as a great
 
 ## How to run a scene with a rotating cube
 
-Unfortunately, the current Scene class has bugs. It will be fixed soon, I promise! Until then:
+Unfortunately, the current Scene class has possible bugs, and it's not finished:
 
 - Pull repository
 - Open Game.sln file on Visual Studio (preferably 2022 version)
-- Hit F5 and get an error!
-- Wait for the fix!
+- Hit F5 and see great cube!
 
 This "game" was originally designed for Windows machines, so you can't run it on Unix machines :(

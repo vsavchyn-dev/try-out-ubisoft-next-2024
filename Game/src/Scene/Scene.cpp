@@ -15,15 +15,15 @@ void Scene::Init(Box viewport)
 {
 	m_viewport = viewport;
 
-	float fov = 90.0f;
-	float distancePlane = 1.0f / tanf(fov * 0.5f /  PI * 180.0f);
-	float aspectRatio   = viewport.w / viewport.h;
-	float zNear = 0.1f;
-	float zFar  = 100.0f;
-	
-	m_projection = Matrix::Projection(distancePlane, aspectRatio, zNear, zFar);
+    float fov = 90.0f;
+    float distancePlane = 1.0f / tanf(fov / 2 * PI / 180);
+    float aspectRatio   = viewport.w / viewport.h;
+    float zNear = 0.1f;
+    float zFar  = 100.0f;
 
-	m_mesh = Mesh::Cube();
+    m_projection = Matrix::Projection(distancePlane, aspectRatio, zNear, zFar);
+
+    m_mesh = Mesh::Cube();
 }
 
 void Scene::Update(float deltaTime)
@@ -31,11 +31,11 @@ void Scene::Update(float deltaTime)
 	static float elapsed = 0.0f;
 	elapsed += deltaTime / 1000.0f;
 
-	Matrix scaling = Matrix::Scale(Vector3(1.0f, 1.0f, 1.0f));
-	Matrix rotation = Matrix::RotateX(elapsed) * Matrix::RotateY(elapsed);
-	Matrix translation = Matrix::Translate(Vector3(0.0f, 0.0f, 0.0f));
+	Matrix scaling     = Matrix::Scale(Vector3(1.0f, 1.0f, 1.0f));
+	Matrix rotation    = Matrix::RotateY(elapsed) * Matrix::RotateX(elapsed);
+	Matrix translation = Matrix::Translate(Vector3(0.0f, 0.0f, 25.0f));
 
-	Matrix world = Matrix::Identity() * scaling * translation;
+	Matrix world = Matrix::Identity() * rotation * scaling * translation;
 
 	Vector3 position = { 0.0f, 0.0f, 0.0f };
 	Vector3 up	     = { 0.0f, 1.0f, 0.0f };
@@ -113,4 +113,3 @@ void Scene::DrawBorder() const
 	App::DrawLine(w, h, w, y, r, g, b);
 	App::DrawLine(w, y, x, y, r, g, b);
 }
-
